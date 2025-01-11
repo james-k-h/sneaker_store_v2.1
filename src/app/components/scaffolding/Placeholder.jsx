@@ -1,14 +1,5 @@
 import Image from 'next/image';
 import { StyledButton } from '../../registry/new-york/ui/StyledButton';
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogFooter,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from '../../registry/new-york/ui/dialog';
 
 export function SneakerNewArrivals({ recentArrival }) {
   function handleClick() {
@@ -35,25 +26,14 @@ export function SneakerNewArrivals({ recentArrival }) {
         <p className="mb-4 mt-2 text-sm text-muted-foreground">
           Click below for more information
         </p>
-        <Dialog>
-          <DialogTrigger asChild>
-            <StyledButton size="sm" className="relative w-1/4 text-wrap p-4">
-              Visit - {item.name}
-            </StyledButton>
-          </DialogTrigger>
-          <DialogContent>
-            <DialogHeader>
-              <DialogTitle>Add Podcast</DialogTitle>
-              <DialogDescription>
-                Copy and paste the podcast feed URL to import.
-              </DialogDescription>
-            </DialogHeader>
 
-            <DialogFooter>
-              <StyledButton onClick={handleClick}></StyledButton>
-            </DialogFooter>
-          </DialogContent>
-        </Dialog>
+        <StyledButton
+          size="sm"
+          className="relative w-1/4 text-wrap p-4"
+          onClick={handleClick}
+        >
+          Visit - {item.name}
+        </StyledButton>
       </div>
     </div>
   );

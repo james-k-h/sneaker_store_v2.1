@@ -2,11 +2,11 @@
 import { ScrollArea, ScrollBar } from '../registry/new-york/ui/scroll-area';
 import { StyledSeparator } from '../registry/new-york/ui/StyledSeparator';
 import {
-  Tabs,
-  TabsContent,
-  TabsList,
-  TabsTrigger,
-} from '../registry/new-york/ui/tabs';
+  StyledTabs,
+  StyledTabsContent,
+  StyledTabsList,
+  StyledTabsTrigger,
+} from '../registry/new-york/ui/StyledTabs';
 import { SneakerNewArrivals } from './../components/scaffolding/Placeholder';
 import { PopularSneakers } from './../components/scaffolding/Artwork';
 import { popularShoes } from '../data/sneakers';
@@ -48,21 +48,24 @@ export default function Sneakers() {
               <Sidebar className="hidden lg:block mt-16 text-color_4" />
               <div className="col-span-3 lg:col-span-4 lg:border-l mt-16 ">
                 <div className="h-full px-4 py-6 lg:px-8">
-                  <Tabs
+                  <StyledTabs
                     defaultValue="sneakers"
                     className="h-full space-y-6 text-color_4"
                   >
                     <div className="space-between flex items-center ">
-                      <TabsList className="text-color_4">
-                        <TabsTrigger value="sneakers" className="relative ">
+                      <StyledTabsList className="text-color_4">
+                        <StyledTabsTrigger
+                          value="sneakers"
+                          className="relative "
+                        >
                           Top Sellers
-                        </TabsTrigger>
-                        <TabsTrigger value="new_arrivals">
+                        </StyledTabsTrigger>
+                        <StyledTabsTrigger value="new_arrivals">
                           New Arrival
-                        </TabsTrigger>
-                      </TabsList>
+                        </StyledTabsTrigger>
+                      </StyledTabsList>
                     </div>
-                    <TabsContent
+                    <StyledTabsContent
                       value="sneakers"
                       className="border-none p-0 outline-none"
                     >
@@ -138,9 +141,9 @@ export default function Sneakers() {
                           <ScrollBar orientation="horizontal" />
                         </ScrollArea>
                       </div>
-                    </TabsContent>
+                    </StyledTabsContent>
                     {/* to-do */}
-                    <TabsContent
+                    <StyledTabsContent
                       value="new_arrivals"
                       className="h-full flex-col border-none p-0 data-[state=active]:flex"
                     >
@@ -156,8 +159,8 @@ export default function Sneakers() {
                       </div>
                       <StyledSeparator className="my-4" />
                       <SneakerNewArrivals recentArrival={recentArrival} />
-                    </TabsContent>
-                  </Tabs>
+                    </StyledTabsContent>
+                  </StyledTabs>
                 </div>
               </div>
             </div>

@@ -4,7 +4,10 @@ import SneakerItem from '../components/layout/sneaker/SneakerItem';
 import { useEffect, useState } from 'react';
 import { ScrollArea, ScrollBar } from '../registry/new-york/ui/scroll-area';
 import { StyledSeparator } from '../registry/new-york/ui/StyledSeparator';
-import { Tabs, TabsContent } from '../registry/new-york/ui/tabs';
+import {
+  StyledTabs,
+  StyledTabsContent,
+} from '../registry/new-york/ui/StyledTabs';
 import { StyledButton } from '../registry/new-york/ui/StyledButton';
 
 import SectionHeaders from '../components/layout/header/SectionHeaders';
@@ -90,7 +93,7 @@ const Mens = ({ params }) => {
               />
               <div className="col-span-3 lg:col-span-4 lg:border-l mt-16 ">
                 <div className="h-full px-4 py-6 lg:px-8">
-                  <Tabs
+                  <StyledTabs
                     defaultValue="sneakers"
                     className="h-full space-y-6 text-color_4"
                   >
@@ -102,7 +105,7 @@ const Mens = ({ params }) => {
                     </div>
                     {/* <section className="text-center my-8" id="contact"> */}
 
-                    <TabsContent
+                    <StyledTabsContent
                       value="sneakers"
                       className="border-none p-0 outline-none text-center "
                     >
@@ -274,8 +277,8 @@ const Mens = ({ params }) => {
                           <ScrollBar orientation="horizontal" />
                         </ScrollArea>
                       </div>
-                    </TabsContent>
-                  </Tabs>
+                    </StyledTabsContent>
+                  </StyledTabs>
                 </div>
               </div>
             </div>

@@ -3,9 +3,12 @@
 import SneakerItem from '../components/layout/sneaker/SneakerItem';
 import { useEffect, useState } from 'react';
 import { ScrollArea, ScrollBar } from '../registry/new-york/ui/scroll-area';
-import { Separator } from '../registry/new-york/ui/StyledSeparator';
-import { Tabs, TabsContent } from '../registry/new-york/ui/tabs';
-import { Button } from '../registry/new-york/ui/StyledButton';
+import { StyledSeparator } from '../registry/new-york/ui/StyledSeparator';
+import {
+  StyledTabs,
+  StyledTabsContent,
+} from '../registry/new-york/ui/StyledTabs';
+import { StyledButton } from '../registry/new-york/ui/StyledButton';
 
 import SectionHeaders from '../components/layout/header/SectionHeaders';
 import { SidebarFilter } from '../components/scaffolding/SidebarFilter';
@@ -90,7 +93,7 @@ const Womens = ({ params }) => {
               />
               <div className="col-span-3 lg:col-span-4 lg:border-l mt-16 ">
                 <div className="h-full px-4 py-6 lg:px-8">
-                  <Tabs
+                  <StyledTabs
                     defaultValue="sneakers"
                     className="h-full space-y-6 text-color_4"
                   >
@@ -102,13 +105,12 @@ const Womens = ({ params }) => {
                     </div>
                     {/* <section className="text-center my-8" id="contact"> */}
 
-                    <TabsContent
+                    <StyledTabsContent
                       value="sneakers"
                       className="border-none p-0 outline-none text-center "
                     >
-                      <Separator className="my-4" />
+                      <StyledSeparator className="my-4" />
 
-                      {/* <Separator className="my-4" /> */}
                       <div className="relative">
                         <ScrollArea>
                           {/* both blank */}
@@ -116,13 +118,13 @@ const Womens = ({ params }) => {
                             searchQuery === ('' || null) &&
                             filterBrand === ('' || null) && (
                               <div>
-                                <Button
+                                <StyledButton
                                   onClick={removeLimit}
                                   variant="secondary"
                                   className="w-1/4"
                                 >
                                   View All{' '}
-                                </Button>
+                                </StyledButton>
                                 <div className={divClassname}>
                                   {limitedItems
                                     .filter(
@@ -273,8 +275,8 @@ const Womens = ({ params }) => {
                           <ScrollBar orientation="horizontal" />
                         </ScrollArea>
                       </div>
-                    </TabsContent>
-                  </Tabs>
+                    </StyledTabsContent>
+                  </StyledTabs>
                 </div>
               </div>
             </div>
