@@ -172,7 +172,7 @@ input[type='email']:disabled,
 input[type='password']:disabled,
 input[type='tel']:disabled,
 input[type='text']:disabled {
-  @apply bg-lightGray cursor-not-allowed;
+  @apply text-white bg-color_4 border-color_3 cursor-not-allowed;
 }
 
 button,

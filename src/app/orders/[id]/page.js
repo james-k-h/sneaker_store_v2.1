@@ -5,6 +5,7 @@ import SectionHeaders from '@/app/components/layout/header/SectionHeaders';
 import CartProduct from '@/app/components/layout/cart/CartProduct';
 import { useParams } from 'next/navigation';
 import { useContext, useEffect, useState } from 'react';
+import Link from 'next/link';
 
 const OrderPage = () => {
   const { clearCart } = useContext(CartContext);
@@ -37,38 +38,43 @@ const OrderPage = () => {
   }
 
   return (
-    <section className="max-w-4xl text-center mx-auto mt-8 h-screen">
+    <section className="max-w-4xl text-center mx-auto py-32 h-screen">
       <div className="text-center mt-8">
         <SectionHeaders mainHeader="Your Order" />
-        <div className="my-4 text-primary font-semibold">
-          <p>Thank you for your order.</p>
-          <p>We will call you when your meal is on route.</p>
+        <div className="my-4 text-primary font-semibold text-color_1">
+          <p className="text-color_1">Thank you for your order.</p>
+          <p className="text-color_1">
+            You will receive your order as per our{' '}
+            <Link className="hover:italic" href="/shipping">
+              shipping policy.
+            </Link>
+          </p>
         </div>
       </div>
       {loadingOrder && <div>Loading your order</div>}
       {order && (
-        <div className="text-primary  grid md:grid-cols-2 md:gap-16 mt-16">
+        <div className="text-primary  grid md:grid-cols-2 md:gap-16 mt-16 ">
           <div>
             {order.cartProducts.map((product) => (
               <CartProduct product={product} key={product._id} />
             ))}
-            <div className="text-primary flex py-2 justify-end items-center pr-2">
-              <div className="font-semibold">
+            <div className="text-primary flex py-2 justify-end items-center pr-2 text-color_1">
+              <div className="font-semibold text-color_1">
                 Subtotal:
                 <br />
                 Delivery:
                 <br />
                 Total:
               </div>
-              <div className="font-bold pl-2 text-right">
+              <div className="font-bold pl-2 text-right text-color_1">
                 ${subtotal}
                 <br />
-                $5 <br />${subtotal + 5}
+                $0 <br />${subtotal}
               </div>
             </div>
           </div>
           <div>
-            <div className="bg-lightGray p-4 rounded-lg">
+            <div className="bg-black p-4 rounded-lg">
               <AddressInputs addressProps={order} disabled={true} />
             </div>
           </div>
