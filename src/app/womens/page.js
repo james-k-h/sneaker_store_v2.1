@@ -1,7 +1,7 @@
 'use client';
 
 import SneakerItem from '../components/layout/sneaker/SneakerItem';
-import { useEffect, useState } from 'react';
+import { Suspense, useEffect, useState } from 'react';
 import { ScrollArea, ScrollBar } from '../registry/new-york/ui/scroll-area';
 import { StyledSeparator } from '../registry/new-york/ui/StyledSeparator';
 import {
@@ -80,53 +80,70 @@ const Womens = ({ params }) => {
   return (
     <>
       <div className="md:block">
-        {/* <Menu /> */}
-        <div className="border-t">
-          <div className="bg-background mt-16">
-            <div className="grid lg:grid-cols-5">
-              {/* sidebar */}
-              <SidebarFilter
-                sneakerItems={sneakerItems}
-                className="hidden lg:block mt-16 text-color_4"
-                categoryString={categoryString}
-                // query={query}
-              />
-              <div className="col-span-3 lg:col-span-4 lg:border-l mt-16 ">
-                <div className="h-full px-4 py-6 lg:px-8">
-                  <StyledTabs
-                    defaultValue="sneakers"
-                    className="h-full space-y-6 text-color_4"
-                  >
-                    <div className="text-center ">
-                      <SectionHeaders
-                        subHeader="Top selling Womens shoes, for athletic performance or just everyday use"
-                        mainHeader="Womens"
-                      />
-                    </div>
-                    {/* <section className="text-center my-8" id="contact"> */}
-
-                    <StyledTabsContent
-                      value="sneakers"
-                      className="border-none p-0 outline-none text-center "
+        <Suspense>
+          {/* <Menu /> */}
+          <div className="border-t">
+            <div className="bg-background mt-16">
+              <div className="grid lg:grid-cols-5">
+                {/* sidebar */}
+                <SidebarFilter
+                  sneakerItems={sneakerItems}
+                  className="hidden lg:block mt-16 text-color_4"
+                  categoryString={categoryString}
+                  // query={query}
+                />
+                <div className="col-span-3 lg:col-span-4 lg:border-l mt-16 ">
+                  <div className="h-full px-4 py-6 lg:px-8">
+                    <StyledTabs
+                      defaultValue="sneakers"
+                      className="h-full space-y-6 text-color_4"
                     >
-                      <StyledSeparator className="my-4" />
+                      <div className="text-center ">
+                        <SectionHeaders
+                          subHeader="Top selling Womens shoes, for athletic performance or just everyday use"
+                          mainHeader="Womens"
+                        />
+                      </div>
+                      {/* <section className="text-center my-8" id="contact"> */}
 
-                      <div className="relative">
-                        <ScrollArea>
-                          {/* both blank */}
-                          {ifClicked != true &&
-                            searchQuery === ('' || null) &&
-                            filterBrand === ('' || null) && (
-                              <div>
-                                <StyledButton
-                                  onClick={removeLimit}
-                                  variant="secondary"
-                                  className="w-1/4"
-                                >
-                                  View All{' '}
-                                </StyledButton>
+                      <StyledTabsContent
+                        value="sneakers"
+                        className="border-none p-0 outline-none text-center "
+                      >
+                        <StyledSeparator className="my-4" />
+
+                        <div className="relative">
+                          <ScrollArea>
+                            {/* both blank */}
+                            {ifClicked != true &&
+                              searchQuery === ('' || null) &&
+                              filterBrand === ('' || null) && (
+                                <div>
+                                  <StyledButton
+                                    onClick={removeLimit}
+                                    variant="secondary"
+                                    className="w-1/4"
+                                  >
+                                    View All{' '}
+                                  </StyledButton>
+                                  <div className={divClassname}>
+                                    {limitedItems
+                                      .filter(
+                                        (item) =>
+                                          item.category ===
+                                          '6760e8b886313c34b0e0658e'
+                                      )
+                                      .map((item, i) => (
+                                        <SneakerItem {...item} key={i} />
+                                      ))}
+                                  </div>
+                                </div>
+                              )}
+                            {ifClicked == true &&
+                              searchQuery === ('' || null) &&
+                              filterBrand === ('' || null) && (
                                 <div className={divClassname}>
-                                  {limitedItems
+                                  {sneakerItems
                                     .filter(
                                       (item) =>
                                         item.category ===
@@ -136,83 +153,48 @@ const Womens = ({ params }) => {
                                       <SneakerItem {...item} key={i} />
                                     ))}
                                 </div>
-                              </div>
-                            )}
-                          {ifClicked == true &&
-                            searchQuery === ('' || null) &&
-                            filterBrand === ('' || null) && (
-                              <div className={divClassname}>
-                                {sneakerItems
-                                  .filter(
-                                    (item) =>
-                                      item.category ===
-                                      '6760e8b886313c34b0e0658e'
-                                  )
-                                  .map((item, i) => (
-                                    <SneakerItem {...item} key={i} />
-                                  ))}
-                              </div>
-                            )}
-                          {/* search blank, brand chosen */}
-                          {ifClicked != true &&
-                            searchQuery === ('' || null) &&
-                            filterBrand != '' && (
-                              <div className={divClassname}>
-                                {sneakerItems
-                                  .filter(
-                                    (item) =>
-                                      item.category ===
-                                      '6760e8b886313c34b0e0658e'
-                                  )
-                                  .filter((item) =>
-                                    item.brand.includes(filterBrand)
-                                  )
-                                  .map((item, i) => (
-                                    <SneakerItem {...item} key={i} />
-                                  ))}
-                              </div>
-                            )}
-                          {ifClicked == true &&
-                            searchQuery === ('' || null) &&
-                            filterBrand != '' && (
-                              <div className={divClassname}>
-                                {sneakerItems
-                                  .filter(
-                                    (item) =>
-                                      item.category ===
-                                      '6760e8b886313c34b0e0658e'
-                                  )
-                                  .filter((item) =>
-                                    item.brand.includes(filterBrand)
-                                  )
-                                  .map((item, i) => (
-                                    <SneakerItem {...item} key={i} />
-                                  ))}
-                              </div>
-                            )}
-                          {/* search chosen, brand blank */}
-                          {ifClicked != true &&
-                            filterBrand === ('' || null) &&
-                            searchQuery != '' && (
-                              <div className={divClassname}>
-                                {sneakerItems
-                                  .filter(
-                                    (item) =>
-                                      item.category ===
-                                      '6760e8b886313c34b0e0658e'
-                                  )
-                                  .filter((item) =>
-                                    item.name.includes(searchQuery)
-                                  )
-                                  .map((item, i) => (
-                                    <SneakerItem {...item} key={i} />
-                                  ))}
-                              </div>
-                            )}
-                          {ifClicked == true &&
-                            filterBrand === ('' || null) &&
-                            searchQuery != '' && (
-                              <div>
+                              )}
+                            {/* search blank, brand chosen */}
+                            {ifClicked != true &&
+                              searchQuery === ('' || null) &&
+                              filterBrand != '' && (
+                                <div className={divClassname}>
+                                  {sneakerItems
+                                    .filter(
+                                      (item) =>
+                                        item.category ===
+                                        '6760e8b886313c34b0e0658e'
+                                    )
+                                    .filter((item) =>
+                                      item.brand.includes(filterBrand)
+                                    )
+                                    .map((item, i) => (
+                                      <SneakerItem {...item} key={i} />
+                                    ))}
+                                </div>
+                              )}
+                            {ifClicked == true &&
+                              searchQuery === ('' || null) &&
+                              filterBrand != '' && (
+                                <div className={divClassname}>
+                                  {sneakerItems
+                                    .filter(
+                                      (item) =>
+                                        item.category ===
+                                        '6760e8b886313c34b0e0658e'
+                                    )
+                                    .filter((item) =>
+                                      item.brand.includes(filterBrand)
+                                    )
+                                    .map((item, i) => (
+                                      <SneakerItem {...item} key={i} />
+                                    ))}
+                                </div>
+                              )}
+                            {/* search chosen, brand blank */}
+                            {ifClicked != true &&
+                              filterBrand === ('' || null) &&
+                              searchQuery != '' && (
                                 <div className={divClassname}>
                                   {sneakerItems
                                     .filter(
@@ -227,61 +209,81 @@ const Womens = ({ params }) => {
                                       <SneakerItem {...item} key={i} />
                                     ))}
                                 </div>
-                              </div>
-                            )}
-                          {/* both chosen */}
-                          {ifClicked != true &&
-                            searchQuery !== '' &&
-                            filterBrand !== '' && (
-                              <div className={divClassname}>
-                                {sneakerItems
-                                  .filter(
-                                    (item) =>
-                                      item.category ===
-                                      '6760e8b886313c34b0e0658e'
-                                  )
-                                  .filter((item) =>
-                                    item.name.includes(searchQuery)
-                                  )
-                                  .filter((item) =>
-                                    item.brand.includes(filterBrand)
-                                  )
-                                  .map((item, i) => (
-                                    <SneakerItem {...item} key={i} />
-                                  ))}
-                              </div>
-                            )}
-                          {ifClicked == true &&
-                            searchQuery !== '' &&
-                            filterBrand !== '' && (
-                              <div className={divClassname}>
-                                {sneakerItems
-                                  .filter(
-                                    (item) =>
-                                      item.category ===
-                                      '6760e8b886313c34b0e0658e'
-                                  )
-                                  .filter((item) =>
-                                    item.name.includes(searchQuery)
-                                  )
-                                  .filter((item) =>
-                                    item.brand.includes(filterBrand)
-                                  )
-                                  .map((item, i) => (
-                                    <SneakerItem {...item} key={i} />
-                                  ))}
-                              </div>
-                            )}
-                          <ScrollBar orientation="horizontal" />
-                        </ScrollArea>
-                      </div>
-                    </StyledTabsContent>
-                  </StyledTabs>
+                              )}
+                            {ifClicked == true &&
+                              filterBrand === ('' || null) &&
+                              searchQuery != '' && (
+                                <div>
+                                  <div className={divClassname}>
+                                    {sneakerItems
+                                      .filter(
+                                        (item) =>
+                                          item.category ===
+                                          '6760e8b886313c34b0e0658e'
+                                      )
+                                      .filter((item) =>
+                                        item.name.includes(searchQuery)
+                                      )
+                                      .map((item, i) => (
+                                        <SneakerItem {...item} key={i} />
+                                      ))}
+                                  </div>
+                                </div>
+                              )}
+                            {/* both chosen */}
+                            {ifClicked != true &&
+                              searchQuery !== '' &&
+                              filterBrand !== '' && (
+                                <div className={divClassname}>
+                                  {sneakerItems
+                                    .filter(
+                                      (item) =>
+                                        item.category ===
+                                        '6760e8b886313c34b0e0658e'
+                                    )
+                                    .filter((item) =>
+                                      item.name.includes(searchQuery)
+                                    )
+                                    .filter((item) =>
+                                      item.brand.includes(filterBrand)
+                                    )
+                                    .map((item, i) => (
+                                      <SneakerItem {...item} key={i} />
+                                    ))}
+                                </div>
+                              )}
+                            {ifClicked == true &&
+                              searchQuery !== '' &&
+                              filterBrand !== '' && (
+                                <div className={divClassname}>
+                                  {sneakerItems
+                                    .filter(
+                                      (item) =>
+                                        item.category ===
+                                        '6760e8b886313c34b0e0658e'
+                                    )
+                                    .filter((item) =>
+                                      item.name.includes(searchQuery)
+                                    )
+                                    .filter((item) =>
+                                      item.brand.includes(filterBrand)
+                                    )
+                                    .map((item, i) => (
+                                      <SneakerItem {...item} key={i} />
+                                    ))}
+                                </div>
+                              )}
+                            <ScrollBar orientation="horizontal" />
+                          </ScrollArea>
+                        </div>
+                      </StyledTabsContent>
+                    </StyledTabs>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
+        </Suspense>
       </div>
     </>
   );

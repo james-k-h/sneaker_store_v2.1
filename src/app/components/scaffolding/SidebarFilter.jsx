@@ -4,7 +4,7 @@ import { cn } from './../../lib/utils';
 import Search from '../ui/Search';
 
 import FormRowSelect from '../ui/FormRowSelect';
-import { useEffect, useState } from 'react';
+import { Suspense, useEffect, useState } from 'react';
 import ViewMeButton from '../layout/sneaker/ViewMeButton';
 
 export function SidebarFilter({ className, sneakerItems, categoryString }) {
@@ -53,15 +53,13 @@ export function SidebarFilter({ className, sneakerItems, categoryString }) {
     <div className={cn('pb-12', className)}>
       <div className="space-y-4 py-4 text-color_4">
         <div className="px-3 py-2">
-          {/* <label className="font-semibold text-black ">
-            Search by Sneaker Name
-          </label> */}
-
-          <Search
-            sneakerBrand={sneakerBrand}
-            className={className}
-            sneakerSale={sneakerSale}
-          />
+          <Suspense>
+            <Search
+              sneakerBrand={sneakerBrand}
+              className={className}
+              sneakerSale={sneakerSale}
+            />
+          </Suspense>
         </div>{' '}
       </div>
     </div>
