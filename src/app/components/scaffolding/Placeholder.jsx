@@ -9,8 +9,6 @@ import {
   DialogTitle,
   DialogTrigger,
 } from '../../registry/new-york/ui/dialog';
-import { Input } from '../../registry/new-york/ui/input';
-import { Label } from '../../registry/new-york/ui/label';
 
 export function SneakerNewArrivals({ recentArrival }) {
   function handleClick() {
@@ -50,12 +48,7 @@ export function SneakerNewArrivals({ recentArrival }) {
                 Copy and paste the podcast feed URL to import.
               </DialogDescription>
             </DialogHeader>
-            <div className="grid gap-4 py-4">
-              <div className="grid gap-2">
-                <Label htmlFor="url">Podcast URL</Label>
-                <Input id="url" placeholder="https://example.com/feed.xml" />
-              </div>
-            </div>
+
             <DialogFooter>
               <StyledButton onClick={handleClick}></StyledButton>
             </DialogFooter>
