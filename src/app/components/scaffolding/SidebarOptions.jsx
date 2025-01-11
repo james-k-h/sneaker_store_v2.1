@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Button } from '../../registry/new-york/ui/StyledButton';
+import { StyledButton } from '../../registry/new-york/ui/StyledButton';
 
 const SidebarOptions = ({ title }) => {
   let subTitle = title.toUpperCase();
@@ -27,7 +27,10 @@ const SidebarOptions = ({ title }) => {
           </svg>
           <Link href={`/${title}#sale?limit=2`}>Sale</Link>
         </Button> */}
-        <Button variant="ghost" className="w-full justify-start text-color_2">
+        <StyledButton
+          variant="ghost"
+          className="w-full justify-start text-color_2"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
@@ -44,7 +47,7 @@ const SidebarOptions = ({ title }) => {
             <rect width="7" height="7" x="3" y="14" rx="1" />
           </svg>
           <Link href={`/${title}?limit=2`}>Collection</Link>
-        </Button>
+        </StyledButton>
       </div>
     </div>
   );

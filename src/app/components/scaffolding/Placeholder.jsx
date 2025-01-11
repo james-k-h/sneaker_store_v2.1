@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { Button } from '../../registry/new-york/ui/StyledButton';
+import { StyledButton } from '../../registry/new-york/ui/StyledButton';
 import {
   Dialog,
   DialogContent,
@@ -39,9 +39,9 @@ export function SneakerNewArrivals({ recentArrival }) {
         </p>
         <Dialog>
           <DialogTrigger asChild>
-            <Button size="sm" className="relative w-1/4 text-wrap p-4">
+            <StyledButton size="sm" className="relative w-1/4 text-wrap p-4">
               Visit - {item.name}
-            </Button>
+            </StyledButton>
           </DialogTrigger>
           <DialogContent>
             <DialogHeader>
@@ -57,7 +57,7 @@ export function SneakerNewArrivals({ recentArrival }) {
               </div>
             </div>
             <DialogFooter>
-              <Button onClick={handleClick}></Button>
+              <StyledButton onClick={handleClick}></StyledButton>
             </DialogFooter>
           </DialogContent>
         </Dialog>

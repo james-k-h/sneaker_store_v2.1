@@ -1,6 +1,6 @@
 'use client';
 import { ScrollArea, ScrollBar } from '../registry/new-york/ui/scroll-area';
-import { Separator } from '../registry/new-york/ui/StyledSeparator';
+import { StyledSeparator } from '../registry/new-york/ui/StyledSeparator';
 import {
   Tabs,
   TabsContent,
@@ -79,7 +79,7 @@ export default function Sneakers() {
 
                       {/* top section mapping */}
                       {/* <button onClick={testingClick}>test</button> */}
-                      <Separator className="my-4" />
+                      <StyledSeparator className="my-4" />
                       <div className="relative">
                         <ScrollArea>
                           <div className="flex gap-4 pb-4">
@@ -114,7 +114,7 @@ export default function Sneakers() {
                       </div>
 
                       {/* bottom section mapping*/}
-                      <Separator className="my-4" />
+                      <StyledSeparator className="my-4" />
                       <div className="relative">
                         <ScrollArea>
                           <div className=" gap-2 pb-4 grid grid-cols-2 xl:grid-cols-6 md:grid-cols-4">
@@ -154,7 +154,7 @@ export default function Sneakers() {
                           </p>
                         </div>
                       </div>
-                      <Separator className="my-4" />
+                      <StyledSeparator className="my-4" />
                       <SneakerNewArrivals recentArrival={recentArrival} />
                     </TabsContent>
                   </Tabs>
