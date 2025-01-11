@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { Button } from '../../registry/new-york/ui/button';
+import { Button } from '../../registry/new-york/ui/StyledButton';
 import {
   Dialog,
   DialogContent,

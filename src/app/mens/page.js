@@ -3,9 +3,9 @@
 import SneakerItem from '../components/layout/sneaker/SneakerItem';
 import { useEffect, useState } from 'react';
 import { ScrollArea, ScrollBar } from '../registry/new-york/ui/scroll-area';
-import { Separator } from '../registry/new-york/ui/separator';
+import { StyledSeparator } from '../registry/new-york/ui/StyledSeparator';
 import { Tabs, TabsContent } from '../registry/new-york/ui/tabs';
-import { Button } from '../registry/new-york/ui/button';
+import { StyledButton } from '../registry/new-york/ui/StyledButton';
 
 import SectionHeaders from '../components/layout/header/SectionHeaders';
 import { SidebarFilter } from '../components/scaffolding/SidebarFilter';
@@ -106,50 +106,10 @@ const Mens = ({ params }) => {
                       value="sneakers"
                       className="border-none p-0 outline-none text-center "
                     >
-                      <Separator className="my-4" />
-                      {/* <div className="py-8 items-center text-center justify-between">
-                        <div className="space-y-1 text-center">
-                          <h2 className="text-2xl font-semibold tracking-tight text-center text-color_4">
-                            Top Sellers
-                          </h2>
-                          <p className="text-sm text-muted-foreground">
-                            Our top sellers. Updated daily.
-                          </p>
-                        </div>
-                      </div> */}
-
-                      {/* top section mapping */}
-
-                      {/* <Separator className="my-4" />
-                      <div className="relative">
-                        <ScrollArea>
-                          <div className="flex space-x-4 pb-4">
-                            {listenNowAlbums.map((album) => (
-                              <AlbumArtwork
-                                key={album.name}
-                                album={album}
-                                className="w-[250px]"
-                                aspectRatio="portrait"
-                                width={250}
-                                height={330}
-                              />
-                            ))}
-                          </div>
-                          <ScrollBar orientation="horizontal" />
-                        </ScrollArea>
-                      </div> */}
-                      {/* <div className="mt-6 space-y-1">
-                        <h2 className="text-2xl font-semibold tracking-tight">
-                          Mens Shoes
-                        </h2>
-                        <p className="text-sm text-muted-foreground">
-                          Our selection. Updated daily.
-                        </p>
-                      </div> */}
-                      {/* <button onClick={testingButton}></button> */}
+                      <StyledSeparator className="my-4" />
 
                       {/* bottom section mapping*/}
-                      {/* <Separator className="my-4" /> */}
+
                       <div className="relative">
                         <ScrollArea>
                           {/* both blank */}
@@ -157,13 +117,13 @@ const Mens = ({ params }) => {
                             searchQuery === ('' || null) &&
                             filterBrand === ('' || null) && (
                               <div>
-                                <Button
+                                <StyledButton
                                   onClick={removeLimit}
                                   variant="secondary"
                                   className="w-1/4"
                                 >
                                   View All{' '}
-                                </Button>
+                                </StyledButton>
                                 <div className={divClassname}>
                                   {limitedItems
                                     .filter(

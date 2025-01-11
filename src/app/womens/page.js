@@ -3,9 +3,9 @@
 import SneakerItem from '../components/layout/sneaker/SneakerItem';
 import { useEffect, useState } from 'react';
 import { ScrollArea, ScrollBar } from '../registry/new-york/ui/scroll-area';
-import { Separator } from '../registry/new-york/ui/separator';
+import { Separator } from '../registry/new-york/ui/StyledSeparator';
 import { Tabs, TabsContent } from '../registry/new-york/ui/tabs';
-import { Button } from '../registry/new-york/ui/button';
+import { Button } from '../registry/new-york/ui/StyledButton';
 
 import SectionHeaders from '../components/layout/header/SectionHeaders';
 import { SidebarFilter } from '../components/scaffolding/SidebarFilter';

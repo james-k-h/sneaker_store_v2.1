@@ -1,6 +1,6 @@
 'use client';
 import { ScrollArea, ScrollBar } from '../registry/new-york/ui/scroll-area';
-import { Separator } from '../registry/new-york/ui/separator';
+import { Separator } from '../registry/new-york/ui/StyledSeparator';
 import {
   Tabs,
   TabsContent,

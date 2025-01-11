@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Button } from '../../registry/new-york/ui/button';
+import { StyledButton } from '../../registry/new-york/ui/StyledButton';
 import { cn } from './../../lib/utils';
 import Search from '../ui/Search';
 
@@ -56,7 +56,7 @@ export function SidebarFilter({ className, sneakerItems, categoryString }) {
           {/* <label className="font-semibold text-black ">
             Search by Sneaker Name
           </label> */}
-          {/* <button onClick={handleClick}>testing</button> */}
+
           <Search
             sneakerBrand={sneakerBrand}
             className={className}

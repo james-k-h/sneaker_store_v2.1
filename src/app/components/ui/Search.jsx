@@ -3,7 +3,7 @@
 import { MagnifyingGlassIcon } from '@heroicons/react/24/outline';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import { useDebouncedCallback } from 'use-debounce';
-import { Button } from '@/app/registry/new-york/ui/Button';
+import { StyledButton } from '@/app/registry/new-york/ui/StyledButton';
 import { useEffect, useState } from 'react';
 
 export default function Search({ placeholder, sneakerBrand, sneakerSale }) {
@@ -97,7 +97,7 @@ export default function Search({ placeholder, sneakerBrand, sneakerSale }) {
   return (
     <>
       <div className=" py-2 mb-4">
-        <Button
+        <StyledButton
           onClick={clearSelections}
           className="w-2/3 font-semibold text-m text-color_1"
           variant="secondary"
@@ -117,7 +117,7 @@ export default function Search({ placeholder, sneakerBrand, sneakerSale }) {
               d="m20.25 7.5-.625 10.632a2.25 2.25 0 0 1-2.247 2.118H6.622a2.25 2.25 0 0 1-2.247-2.118L3.75 7.5m6 4.125 2.25 2.25m0 0 2.25 2.25M12 13.875l2.25-2.25M12 13.875l-2.25 2.25M3.375 7.5h17.25c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125Z"
             />
           </svg>
-        </Button>
+        </StyledButton>
       </div>
       <div className="py-2">
         <label className="font-semibold text-color_1 ">
@@ -125,10 +125,6 @@ export default function Search({ placeholder, sneakerBrand, sneakerSale }) {
         </label>
       </div>
       <div className="relative flex flex-1 flex-shrink-0 mb-4">
-        {/* <Button onClick={clearSelections} className="w-2/3 font-semibold text-m py-2">
-        Clear All
-      </Button> */}
-
         <div>
           <label htmlFor="search" className="sr-only">
             Search
@@ -148,7 +144,7 @@ export default function Search({ placeholder, sneakerBrand, sneakerSale }) {
         <form className="form gap-4">
           <div className="form-center">
             {showForm == false && (
-              <Button
+              <StyledButton
                 onClick={openList}
                 className="w-2/3 font-semibold text-m text-color_1"
                 variant="secondary"
@@ -168,11 +164,11 @@ export default function Search({ placeholder, sneakerBrand, sneakerSale }) {
                     d="M12 4.5v15m7.5-7.5h-15"
                   />
                 </svg>
-              </Button>
+              </StyledButton>
             )}
             {showForm == true && (
               <div>
-                <Button
+                <StyledButton
                   onClick={openList}
                   className="w-2/3 font-semibold text-m text-color_1"
                   variant="secondary"
@@ -192,7 +188,7 @@ export default function Search({ placeholder, sneakerBrand, sneakerSale }) {
                       d="M5 12h14"
                     />
                   </svg>
-                </Button>
+                </StyledButton>
                 <div className="form-row w-2/3 font-semibold text-m">
                   <select
                     className="peer block w-full rounded-md border border-gray-200
@@ -218,40 +214,9 @@ export default function Search({ placeholder, sneakerBrand, sneakerSale }) {
                 </div>
               </div>
             )}
-            {/* <div className="py-4">
-              <Button
-                className="w-2/3 font-semibold text-m"
-                onClick={showChecked}
-              ></Button>
-              <div className="form-row w-2/3 font-semibold text-m">
-                <select
-                  className="peer block w-full rounded-md border border-gray-200
-                    selection:bg-gray
-                    bg-black
-                    text-white
-                    text-sm outline-2 placeholder:text-gray-500"
-                  placeholder={placeholder}
-                  onChange={(e) => {
-                    handleSearchChecked(e.target.value);
-                  }}
-                  defaultValue={searchParams.get('sale')?.toString()}
-                  // multiple
-                >
-                  {sale.map((i, index) => {
-                    return (
-                      <option key={index} value={i}>
-                        {i}
-                      </option>
-                    );
-                  })}
-                </select>
-           
-              </div>
-            </div> */}
           </div>
         </form>
       </div>
-      {/* <button onClick={handleTest}></button> */}
     </>
   );
 }

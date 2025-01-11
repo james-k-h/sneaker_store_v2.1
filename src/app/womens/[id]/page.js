@@ -1,7 +1,7 @@
 'use client';
 import { CartContext } from '@/app/components/AppContext';
 import SectionHeaders from '@/app/components/layout/header/SectionHeaders';
-import { Separator } from '@/app/registry/new-york/ui/Separator';
+import { Separator } from '@/app/registry/new-york/ui/StyledSeparator';
 import Image from 'next/image';
 import toast from 'react-hot-toast';
 import Link from 'next/link';
