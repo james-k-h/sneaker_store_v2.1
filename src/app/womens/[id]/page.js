@@ -1,7 +1,7 @@
 'use client';
 import { CartContext } from '@/app/components/AppContext';
 import SectionHeaders from '@/app/components/layout/header/SectionHeaders';
-import { Separator } from '@/app/registry/new-york/ui/StyledSeparator';
+import { StyledSeparator } from '@/app/registry/new-york/ui/StyledSeparator';
 import Image from 'next/image';
 import toast from 'react-hot-toast';
 import Link from 'next/link';
@@ -124,7 +124,7 @@ const WomensId = ({ params }) => {
         </div>
       </div>
       <div className="py-8">
-        <Separator />
+        <StyledSeparator />
         <h2 className="py-4  uppercase text-color_2 font-semibold leading-4">
           Description
         </h2>
