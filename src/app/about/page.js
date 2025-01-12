@@ -8,18 +8,20 @@ const About = () => {
       <div className="mt-16 mx-auto  py-4 w-full ">
         <section className="text-center my-20 " id="about">
           <SectionHeaders subHeader="Our Story" mainHeader="About Us" />
-          <div className="max-w-2xl mx-auto text-black mt-4 flex flex-col gap-4">
-            <p>Serving the neighbourhood since 1990.</p>
-            <p>
-              Bayview Eatery opened on Thanksgiving Day 1990. Chef / Owner John
-              Doe began baking pies and selling them to restaurants and his
-              neighbors out of a small kitchen at the corner of Bayview and
-              Fleming St. in Leaside.{' '}
-            </p>
-            <p>
-              Today, Toronto’s beloved restaurant celebrates 24 years of
-              classic, made from scratch Canadian cooking.
-            </p>
+          <div>
+            <div className="max-w-2xl mx-auto text-black mt-4 flex flex-col gap-4">
+              <p>Serving the neighbourhood since 1990.</p>
+              <p>
+                Sneaker Store opened on Thanksgiving Day 1990. Owner John Doe
+                began selling shoes to the community and his neighbors out of a
+                small rented shop at the corner of Bayview and Fleming St. in
+                Leaside.{' '}
+              </p>
+              <p>
+                Today, Toronto’s beloved sneaker boutique celebrates 24 years,
+                with many more to come.
+              </p>
+            </div>
           </div>
         </section>
       </div>
