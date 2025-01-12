@@ -1,11 +1,5 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-<<<<<<< dev
-=======
-  // experimental: {
-  //   missingSuspenseWithCSRBailout: false,
-  // },
->>>>>>> local
   images: {
     remotePatterns: [
       {
