@@ -12,16 +12,18 @@ const Login = () => {
     ev.preventDefault();
     setLoginPending(true);
 
-    await signIn('Credentials', { email, password, callbackUrl: '/' });
+    // await signIn('Credentials', { email, password, callbackUrl: '/' });
 
     setLoginPending(false);
   }
 
   return (
-    <section className="mt-8">
-      <h1 className="text-center text-primary text-4xl mb-4">Login</h1>
+    <section className="py-32">
+      <h1 className="text-center text-primary text-4xl font-semibold mb-4">
+        Login
+      </h1>
       <form className="block max-w-sm mx-auto" onSubmit={handleSubmit}>
-        <input
+        {/* <input
           type="text"
           placeholder="email"
           disabled={loginPending}
@@ -34,11 +36,9 @@ const Login = () => {
           disabled={loginPending}
           value={password}
           onChange={(ev) => setPassword(ev.target.value)}
-        ></input>
-        <button type="submit">Login</button>
-        <div className="my-4 text-center text-gray">
-          Or - Login with a provider:
-        </div>
+        ></input> */}
+        {/* <button type="submit">Login</button> */}
+        <div className="my-4 text-center text-gray">Login with a provider:</div>
         <button
           onClick={() => signIn('google')}
           className="flex gap-4 justify-center bg-primary"

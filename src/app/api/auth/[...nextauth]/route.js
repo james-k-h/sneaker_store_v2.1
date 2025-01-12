@@ -43,6 +43,11 @@ export const authOptions = {
       },
     }),
   ],
+  callbacks: {
+    redirect() {
+      return '/';
+    },
+  },
 };
 
 export async function isAdmin() {

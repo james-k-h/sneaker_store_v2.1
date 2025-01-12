@@ -24,6 +24,7 @@ const Register = () => {
     //   headers: { 'Content-Type': 'application/json' },
     // });
     const response = SignInFetch(ev, 'register', email, password);
+    // await signIn('Credentials', { callbackUrl: '/' });
     if (response.ok) {
       setUserCreated(true);
     } else {
@@ -33,7 +34,7 @@ const Register = () => {
   }
 
   return (
-    <section className="mt-8">
+    <section className="py-32">
       <h1 className="text-center text-primary text-4xl font-semibold mb-4">
         Register
       </h1>
@@ -49,37 +50,18 @@ const Register = () => {
         <div className="my-4 text-center">Error. Please try again.</div>
       )}
       <form className="block max-w-sm mx-auto" onSubmit={handleSubmit}>
-        <input
-          type="text"
-          placeholder="email"
-          disabled={creatingUser}
-          value={email}
-          onChange={(ev) => setEmail(ev.target.value)}
-        ></input>
-        <input
-          type="password"
-          placeholder="password"
-          disabled={creatingUser}
-          value={password}
-          onChange={(ev) => setPassword(ev.target.value)}
-        ></input>
-        <button type="submit" disabled={creatingUser}>
-          Register
-        </button>
-        <div className="my-4 text-center text-gray">
-          Or - Login with a provider:
-        </div>
+        <div className="my-4 text-center text-gray">Login with a provider:</div>
         <button
-          className="flex gap-4 justify-center bg-almond"
+          className="flex gap-4 justify-center bg-color_4"
           onClick={() => signIn('google')}
         >
           <Image
             src={'/google.png'}
-            alt="Login with Google"
+            alt="Register with Google"
             width={32}
             height={32}
           />
-          Login with Google
+          Register with Google
         </button>
       </form>
       <div></div>
