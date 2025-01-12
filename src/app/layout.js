@@ -5,6 +5,7 @@ import Header from './components/layout/header/Header';
 import Footer from './components/layout/footer/Footer';
 import { AppProvider } from './components/AppContext';
 import { Toaster } from 'react-hot-toast';
+import { Suspense } from 'react';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -22,17 +23,19 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className="scroll-smooth bg-white" suppressHydrationWarning>
-      <body className={roboto.className}>
-        {/* <main className="max-w-full  mx-auto border p-4 "> */}
-        <AppProvider>
-          <Toaster />
-          {/* <TopBanner /> */}
-          <Header />
-          {children}
-          <Footer />
-        </AppProvider>
-        {/* </main> */}
-      </body>
+      <Suspense>
+        <body className={roboto.className}>
+          {/* <main className="max-w-full  mx-auto border p-4 "> */}
+          <AppProvider>
+            <Toaster />
+            {/* <TopBanner /> */}
+            <Header />
+            {children}
+            <Footer />
+          </AppProvider>
+          {/* </main> */}
+        </body>
+      </Suspense>
     </html>
   );
 }

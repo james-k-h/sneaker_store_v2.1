@@ -79,8 +79,8 @@ const Womens = ({ params }) => {
 
   return (
     <>
-      <div className="md:block">
-        <Suspense>
+      <Suspense>
+        <div className="md:block">
           {/* <Menu /> */}
           <div className="border-t">
             <div className="bg-background mt-16">
@@ -283,8 +283,8 @@ const Womens = ({ params }) => {
               </div>
             </div>
           </div>
-        </Suspense>
-      </div>
+        </div>
+      </Suspense>
     </>
   );
 };

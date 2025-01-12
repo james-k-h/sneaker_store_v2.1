@@ -1,5 +1,5 @@
 'use client';
-import { useEffect, useState } from 'react';
+import { Suspense, useEffect, useState } from 'react';
 import Tabs from '../components/layout/header/Tabs';
 import { useProfile } from '../hooks/GetProfile';
 import Link from 'next/link';
@@ -25,32 +25,34 @@ const UsersPage = () => {
   }
 
   return (
-    <section className="mt-8 max-w-2xl mx-auto py-32">
-      <Tabs isAdmin={true} />
-      <div className="mt-8">
-        {users?.length > 0 &&
-          users.map((user, i) => (
-            <div
-              key={i}
-              className="bg-primary rounded-lg mb-2 p-1 px-4 items-center gap-4 flex"
-            >
-              <div className="grid grid-cols-2 md:grid-cols-3 gap-4 grow">
-                <div className="text-lightBlack">
-                  {!!user.name && <span>{user.name}</span>}
-                  {!user.name && <span className="italic">No Name</span>}
-                </div>
+    <Suspense>
+      <section className="mt-8 max-w-2xl mx-auto py-32">
+        <Tabs isAdmin={true} />
+        <div className="mt-8">
+          {users?.length > 0 &&
+            users.map((user, i) => (
+              <div
+                key={i}
+                className="bg-primary rounded-lg mb-2 p-1 px-4 items-center gap-4 flex"
+              >
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-4 grow">
+                  <div className="text-lightBlack">
+                    {!!user.name && <span>{user.name}</span>}
+                    {!user.name && <span className="italic">No Name</span>}
+                  </div>
 
-                <span className="text-gray">{user.email}</span>
+                  <span className="text-gray">{user.email}</span>
+                </div>
+                <div>
+                  <Link href={'/users/' + user._id} className="button">
+                    Edit
+                  </Link>
+                </div>
               </div>
-              <div>
-                <Link href={'/users/' + user._id} className="button">
-                  Edit
-                </Link>
-              </div>
-            </div>
-          ))}
-      </div>
-    </section>
+            ))}
+        </div>
+      </section>
+    </Suspense>
   );
 };
 export default UsersPage;
