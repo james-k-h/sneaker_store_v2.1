@@ -287,7 +287,7 @@ const Mens = ({ params }) => {
                                     item.name
                                       .toLowerCase()
                                       .includes(
-                                        searchQuery != ('' | null)
+                                        searchQuery != ('' || null)
                                           ? searchQuery.toLowerCase()
                                           : searchQuery
                                       )
