@@ -53,13 +53,11 @@ export function SidebarFilter({ className, sneakerItems, categoryString }) {
     <div className={cn('pb-12', className)}>
       <div className="space-y-4 py-4 text-color_4">
         <div className="px-3 py-2">
-          <Suspense>
-            <Search
-              sneakerBrand={sneakerBrand}
-              className={className}
-              sneakerSale={sneakerSale}
-            />
-          </Suspense>
+          <Search
+            sneakerBrand={sneakerBrand}
+            className={className}
+            sneakerSale={sneakerSale}
+          />
         </div>{' '}
       </div>
     </div>

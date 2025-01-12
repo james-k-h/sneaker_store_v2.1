@@ -203,7 +203,11 @@ const Womens = ({ params }) => {
                                         '6760e8b886313c34b0e0658e'
                                     )
                                     .filter((item) =>
-                                      item.name.includes(searchQuery)
+                                      item.name.includes(
+                                        searchQuery != ('' || null)
+                                          ? searchQuery.toLowerCase()
+                                          : searchQuery
+                                      )
                                     )
                                     .map((item, i) => (
                                       <SneakerItem {...item} key={i} />
@@ -222,7 +226,11 @@ const Womens = ({ params }) => {
                                           '6760e8b886313c34b0e0658e'
                                       )
                                       .filter((item) =>
-                                        item.name.includes(searchQuery)
+                                        item.name.includes(
+                                          searchQuery != ('' || null)
+                                            ? searchQuery.toLowerCase()
+                                            : searchQuery
+                                        )
                                       )
                                       .map((item, i) => (
                                         <SneakerItem {...item} key={i} />
@@ -242,7 +250,11 @@ const Womens = ({ params }) => {
                                         '6760e8b886313c34b0e0658e'
                                     )
                                     .filter((item) =>
-                                      item.name.includes(searchQuery)
+                                      item.name.includes(
+                                        searchQuery != ('' || null)
+                                          ? searchQuery.toLowerCase()
+                                          : searchQuery
+                                      )
                                     )
                                     .filter((item) =>
                                       item.brand.includes(filterBrand)
@@ -263,7 +275,11 @@ const Womens = ({ params }) => {
                                         '6760e8b886313c34b0e0658e'
                                     )
                                     .filter((item) =>
-                                      item.name.includes(searchQuery)
+                                      item.name.includes(
+                                        searchQuery != ('' || null)
+                                          ? searchQuery.toLowerCase()
+                                          : searchQuery
+                                      )
                                     )
                                     .filter((item) =>
                                       item.brand.includes(filterBrand)
