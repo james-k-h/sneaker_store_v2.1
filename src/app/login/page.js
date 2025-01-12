@@ -18,27 +18,10 @@ const Login = () => {
   }
 
   return (
-    <section className="mt-8">
+    <section className="py-32">
       <h1 className="text-center text-primary text-4xl mb-4">Login</h1>
       <form className="block max-w-sm mx-auto" onSubmit={handleSubmit}>
-        <input
-          type="text"
-          placeholder="email"
-          disabled={loginPending}
-          value={email}
-          onChange={(ev) => setEmail(ev.target.value)}
-        ></input>
-        <input
-          type="password"
-          placeholder="password"
-          disabled={loginPending}
-          value={password}
-          onChange={(ev) => setPassword(ev.target.value)}
-        ></input>
-        <button type="submit">Login</button>
-        <div className="my-4 text-center text-gray">
-          Or - Login with a provider:
-        </div>
+        <div className="my-4 text-center text-gray">Login with a provider:</div>
         <button
           onClick={() => signIn('google')}
           className="flex gap-4 justify-center bg-primary"
