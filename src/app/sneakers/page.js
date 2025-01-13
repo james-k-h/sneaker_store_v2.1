@@ -54,7 +54,7 @@ export default function Sneakers() {
                       defaultValue="sneakers"
                       className="h-full space-y-6 text-color_4"
                     >
-                      <div className="space-between flex items-center hidden md:flex">
+                      <div className="space-between flex items-center ">
                         <StyledTabsList className="text-color_4">
                           <StyledTabsTrigger
                             value="sneakers"

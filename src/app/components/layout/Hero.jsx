@@ -52,7 +52,7 @@ const Hero = () => {
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5 }}
-          className="col-span-6 place-self-center text-center  justify-self-start
+          className="place-self-center text-center  justify-self-start
          sm:text-center px-8
           "
         >
