@@ -22,7 +22,7 @@ import Loading from '../components/Loading';
 export default function Sneakers() {
   const [sneakerItems, setSneakerItems] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-  const [recentArrival, setRecentArrival] = useState([]);
+  // const [recentArrival, setRecentArrival] = useState([]);
 
   useEffect(() => {
     fetch('/api/sneaker-items').then((res) => {
@@ -30,10 +30,10 @@ export default function Sneakers() {
     });
     setIsLoading(true);
     // sneakerItems.filter((item) => item.newArrival === true);
-    setRecentArrival(sneakerItems.filter((item) => item.newArrival === true));
+    // setRecentArrival(sneakerItems.filter((item) => item.newArrival === true));
   }, []);
 
-  // const recentArrival = sneakerItems.filter((item) => item.newArrival === true);
+  const recentArrival = sneakerItems.filter((item) => item.newArrival === true);
 
   function testingClick() {
     console.log(recentArrival);
