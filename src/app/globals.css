@@ -163,9 +163,9 @@ option {
 }
 
 #target {
-  @apply block w-full  rounded-xl;
+  @apply block  rounded-xl;
   @apply border p-2 text-white bg-color_4 border-color_3;
-  @apply w-1/4;
+  /* @apply w-1/4; */
 }
 
 input[type='email']:disabled,

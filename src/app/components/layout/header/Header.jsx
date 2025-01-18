@@ -34,7 +34,7 @@ function AuthLinks({ status, userName }) {
         </Link>
         <Link
           href={'/register'}
-          className=" rounded-full text-color_2 px-8 py-2 text-sm hover:opacity-60"
+          className=" rounded-full lg:text-color_1 text-white px-8 py-2 text-sm hover:opacity-60"
         >
           Register
         </Link>
@@ -69,9 +69,6 @@ export default function Header() {
           </Link>
         </div>
         <div className="flex items-center lg:hidden justify-between ">
-          {/* <Link className="text-primary font-semibold text-2xl" href={'/'}>
-          Bayview Eatery
-        </Link> */}
           <div className="flex gap-8 items-center text-color_2">
             <Link href={'/cart'} className="relative">
               <ShoppingCart />
@@ -100,6 +97,12 @@ export default function Header() {
             </Link>
             <Link className="hover:opacity-60" href={'/sneakers'}>
               Sneakers
+            </Link>
+            <Link className="hover:opacity-60" href={'/mens'}>
+              Shop Mens
+            </Link>
+            <Link className="hover:opacity-60" href={'/womens'}>
+              Shop Womens
             </Link>
             <Link className="hover:opacity-60" href={'/about'}>
               About

@@ -39,8 +39,8 @@ const MensId = ({ params }) => {
     // }
 
     addToCart(sneaker);
-    await new Promise((resolve) => setTimeout(resolve, 600));
-    setShowPopup(false);
+    await new Promise((resolve) => setTimeout(resolve, 200));
+    // setShowPopup(false);
 
     toast.success('Added to your cart!', {
       position: 'top-right',
@@ -107,7 +107,7 @@ const MensId = ({ params }) => {
           >
             <p>order qty placeholder</p>
           </div> */}
-          <div className="py-4 w-1/5  text-black " id="target">
+          <div className="py-4 w-full md:w-1/4 md:flex text-black " id="target">
             <FlyingButton
               targetTop={'5%'}
               targetLeft={'95%'}
