@@ -54,7 +54,7 @@ export default function Sneakers() {
                       defaultValue="sneakers"
                       className="h-full space-y-6 text-color_4"
                     >
-                      <div className="space-between flex items-center ">
+                      {/* <div className="space-between flex items-center ">
                         <StyledTabsList className="text-color_4">
                           <StyledTabsTrigger
                             value="sneakers"
@@ -66,7 +66,7 @@ export default function Sneakers() {
                             New Arrival
                           </StyledTabsTrigger>
                         </StyledTabsList>
-                      </div>
+                      </div> */}
                       <StyledTabsContent
                         value="sneakers"
                         className="border-none p-0 outline-none"
@@ -145,7 +145,7 @@ export default function Sneakers() {
                         </div>
                       </StyledTabsContent>
                       {/* to-do */}
-                      <StyledTabsContent
+                      {/* <StyledTabsContent
                         value="new_arrivals"
                         className="h-full flex-col border-none p-0 data-[state=active]:flex "
                       >
@@ -161,7 +161,7 @@ export default function Sneakers() {
                         </div>
                         <StyledSeparator className="my-4" />
                         <SneakerNewArrivals recentArrival={recentArrival} />
-                      </StyledTabsContent>
+                      </StyledTabsContent> */}
                     </StyledTabs>
                   </div>
                 </div>
