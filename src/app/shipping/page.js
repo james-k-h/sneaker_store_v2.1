@@ -26,16 +26,6 @@ const Shipping = () => {
                 </a>
                 ) ships only to addresses within Canada.
               </p>
-              <p>
-                Sneaker Store opened on Thanksgiving Day 1990. Owner John Doe
-                began selling shoes to the community and his neighbors out of a
-                small rented shop at the corner of Bayview and Fleming St. in
-                Leaside.{' '}
-              </p>
-              <p>
-                Today, Toronto’s beloved sneaker boutique celebrates 24 years,
-                with many more to come.
-              </p>
             </div>
             <div className="py-10">
               <SectionHeaders
@@ -83,7 +73,9 @@ const Shipping = () => {
               <StyledSeparator className="my-4 " />
               <p className="font-semibold">How it works: </p> <br />
               <div className="text-center items-center">
-                <ol style={{ listStyleType: 'decimal' }}>
+                <ol
+                // style={{ listStyleType: 'decimal' }}
+                >
                   <li>Place your online order and choose In-store Pick-Up.</li>
                   <li>
                     Wait for an email confirmation. The store will contact you
