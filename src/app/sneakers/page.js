@@ -87,7 +87,7 @@ export default function Sneakers() {
                         <StyledSeparator className="my-4" />
                         <div className="relative">
                           <ScrollArea>
-                            <div className="flex gap-4 pb-4">
+                            <div className="flex gap-4 pb-4 ">
                               {isLoading === false ? (
                                 <Loading />
                               ) : (
@@ -97,7 +97,9 @@ export default function Sneakers() {
                                     <PopularSneakers
                                       key={item.name}
                                       sneaker={item}
-                                      className=" w-full h-full object-fill object-center group-hover:scale-105 transition-all ease duration-300 col-span-1"
+                                      className="
+                                      hover:cursor-pointer
+                                      w-full h-full object-fill object-center group-hover:scale-105 transition-all ease duration-300 col-span-1"
                                       // sizes="(max-width: 640px) 100vw,(max-width: 1024px) 50vw, 33vw"
                                       // aspectRatio="portrait"
                                       width={item.imageWidth}
@@ -132,7 +134,7 @@ export default function Sneakers() {
                                     <PopularSneakers
                                       key={sneaker.name}
                                       sneaker={sneaker}
-                                      className="w-[150px] grid-cols-1"
+                                      className=" hover:cursor-pointer w-[150px] grid-cols-1"
                                       aspectRatio="square"
                                       width={150}
                                       height={150}
