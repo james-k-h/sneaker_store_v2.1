@@ -107,31 +107,39 @@ const SneakerItemForm = ({ onSubmit, sneakerItem }) => {
             value={redirect}
             onChange={(ev) => setRedirect(ev.target.value)}
           />
-          <div className="gap-4">
-            <label className="text-black">Sale</label>
-            <input
-              type="checkbox"
-              checked={sale}
-              onChange={(ev) => setSale(ev.target.checked)}
-            />
-            <label className="text-black">Popular</label>
-            <input
-              type="checkbox"
-              checked={popular}
-              onChange={(ev) => setPopular(ev.target.checked)}
-            />
-            <label className="text-black">New Arrival</label>
-            <input
-              type="checkbox"
-              checked={newArrival}
-              onChange={(ev) => setNewArrival(ev.target.checked)}
-            />
-            <label className="text-black">Top Seller</label>
-            <input
-              type="checkbox"
-              checked={topSeller}
-              onChange={(ev) => setTopSeller(ev.target.checked)}
-            />
+          <div className="gap-6 flex font-semibold py-2">
+            <div className="gap-2 flex">
+              <label className="text-black">Sale</label>
+              <input
+                type="checkbox"
+                checked={sale}
+                onChange={(ev) => setSale(ev.target.checked)}
+              />
+            </div>
+            <div className="gap-2 flex">
+              <label className="text-black">Popular</label>
+              <input
+                type="checkbox"
+                checked={popular}
+                onChange={(ev) => setPopular(ev.target.checked)}
+              />
+            </div>
+            <div className="gap-2 flex">
+              <label className="text-black">New Arrival</label>
+              <input
+                type="checkbox"
+                checked={newArrival}
+                onChange={(ev) => setNewArrival(ev.target.checked)}
+              />
+            </div>
+            <div className="gap-2 flex">
+              <label className="text-black">Top Seller</label>
+              <input
+                type="checkbox"
+                checked={topSeller}
+                onChange={(ev) => setTopSeller(ev.target.checked)}
+              />
+            </div>
           </div>
           <SneakerItemPriceProps
             name={'Sizes'}

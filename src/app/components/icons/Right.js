@@ -1,4 +1,4 @@
-export default function Right({ className = 'w-6 h-6 bg-black fill-black' }) {
+export default function Right({ className = 'w-6 h-6  fill-color_2' }) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
