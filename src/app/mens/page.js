@@ -49,7 +49,7 @@ const Mens = ({ params }) => {
         .then(setFilterBrand(searchProps.get('brand')))
         .then(setLimit(searchParams.get('limit')));
     });
-  }, [searchProps, filterBrand, pageLength]);
+  }, [searchProps, filterBrand]);
 
   function testingButton() {
     // console.log(query);

@@ -43,7 +43,9 @@ export default function Search({ placeholder, sneakerBrand, sneakerSale }) {
 
     const params = new URLSearchParams(searchParams);
 
-    if (brand) {
+    if (brand === 'Select a Brand') {
+      return;
+    } else if (brand !== 'Select a Brand') {
       params.set('brand', brand);
     } else {
       params.delete('brand');
@@ -51,15 +53,16 @@ export default function Search({ placeholder, sneakerBrand, sneakerSale }) {
     replace(`${pathname}?${params.toString()}`);
   }, 300);
 
+  // clear
+
   function clearSelections() {
     const params = new URLSearchParams(searchParams);
     params.delete('query');
     params.delete('brand');
     params.delete('sale');
     replace(`${pathname}?${params.toString()}`);
+    // handleSearchBrand('Select a Brand');
   }
-
-  // wip
 
   const sale = sneakerSale;
   const handleSearchChecked = useDebouncedCallback((sale) => {
@@ -76,13 +79,13 @@ export default function Search({ placeholder, sneakerBrand, sneakerSale }) {
     console.log(sale);
   }, 300);
 
-  function clearSelections() {
-    const params = new URLSearchParams(searchParams);
-    params.delete('query');
-    params.delete('brand');
-    params.delete('sale');
-    replace(`${pathname}?${params.toString()}`);
-  }
+  // function clearSelections() {
+  //   const params = new URLSearchParams(searchParams);
+  //   params.delete('query');
+  //   params.delete('brand');
+  //   params.delete('sale');
+  //   replace(`${pathname}?${params.toString()}`);
+  // }
   function handleTest() {
     console.log(sale);
     console.log(brand);

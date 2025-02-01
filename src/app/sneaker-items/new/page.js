@@ -50,10 +50,10 @@ const NewSneakerItemPage = () => {
       <div className="max-w-lg mx-auto py-8 text-white">
         <Link href="/sneaker-items" className="button bg-black">
           <Left />
-          <span>Show All Menu Items</span>
+          <span>Show All Sneakers</span>
         </Link>
       </div>
-      <SneakerItemForm menuItem={null} onSubmit={handleFormSubmit} />
+      <SneakerItemForm sneakerItem={null} onSubmit={handleFormSubmit} />
     </section>
   );
 };

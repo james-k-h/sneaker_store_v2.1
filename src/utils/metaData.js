@@ -6,7 +6,7 @@ const siteMetadata = {
   content: 'Local running store with the best in sneakers in town',
   language: 'en-us',
   theme: 'system',
-  siteUrl: 'http://localhost:3000',
+  siteUrl: 'https://sneaker-store-v2.vercel.app/',
   siteLogo: '/logo.png',
   locale: 'en-US',
   github: 'https://github.com/james-k-h',
