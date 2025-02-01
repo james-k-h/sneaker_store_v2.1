@@ -53,8 +53,6 @@ export default function Search({ placeholder, sneakerBrand, sneakerSale }) {
     replace(`${pathname}?${params.toString()}`);
   }, 300);
 
-  // clear
-
   function clearSelections() {
     const params = new URLSearchParams(searchParams);
     params.delete('query');

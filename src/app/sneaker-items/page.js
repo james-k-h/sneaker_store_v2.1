@@ -29,8 +29,8 @@ const SneakerItemsPage = () => {
   return (
     <section className="flex min-h-screen flex-col  py-32">
       <Tabs isAdmin={true} />
-      <div className=" max-w-md flex mx-auto py-8 text-black">
-        <Link className="button flex" href="/sneaker-items/new">
+      <div className=" max-w-md flex mx-auto py-8 text-black fill-black bg-black">
+        <Link className="button flex bg-black" href="/sneaker-items/new">
           <span className="text-black">Create a new sneaker</span>
           <Right />
         </Link>
@@ -39,28 +39,30 @@ const SneakerItemsPage = () => {
         <div className="container mx-auto px-12 py-8">
           <h2 className="text-sm text-black italic">Edit a sneaker: </h2>
 
-          <div className="grid grid-cols-3 gap-2 justify-center ">
+          <div className="grid grid-cols-5 gap-2 justify-center ">
             {SneakerItems?.length > 0 &&
               SneakerItems.map((item) => (
                 <Link
                   key={item.name}
                   href={'/sneaker-items/edit/' + item._id}
-                  className="bg-lightBlack text-white rounded-lg p-4 hover:bg-white/50 hover:font-semibold lg:text-lg  text-sm"
+                  className="
+                  grid-cols-1
+  bg-lightBlack text-white rounded-lg p-4 hover:bg-white/50 hover:font-semibold lg:text-lg  text-sm"
                 >
-                  <div className="relative ">
-                    <Image
-                      src={item.image}
-                      alt={''}
-                      sizes="100vw"
-                      style={{
-                        width: '100%',
-                        height: 'auto',
-                      }}
-                      width={500}
-                      height={300}
-                      className="rounded-md"
-                    />
-                  </div>
+                  {/* <div className="relative "> */}
+                  <Image
+                    src={item.image}
+                    alt={''}
+                    // sizes="100vw"
+                    // style={{
+                    //   width: '100%',
+                    //   height: 'auto',
+                    // }}
+                    width={300}
+                    height={200}
+                    className="mx-auto rounded-md"
+                  />
+                  {/* </div> */}
                   <div className="text-center">{item.name}</div>
                 </Link>
               ))}

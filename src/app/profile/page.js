@@ -1,14 +1,14 @@
 'use client';
 import { useSession } from 'next-auth/react';
-import Image from 'next/image';
+
 import { redirect } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import InfoBox from '../components/layout/InfoBox';
 import toast from 'react-hot-toast';
 import Error from 'next/error';
-import Link from 'next/link';
+
 import Tabs from '../components/layout/header/Tabs';
-import EditableImage from '../components/layout/EditableImage';
+
 import UserForm from '../components/layout/header/UserForm';
 
 const ProfilePage = () => {
