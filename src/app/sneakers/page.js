@@ -55,14 +55,17 @@ export default function Sneakers() {
                       className="h-full space-y-6 text-color_4"
                     >
                       <div className="space-between flex items-center ">
-                        <StyledTabsList className="text-color_4">
+                        <StyledTabsList className="text-color_1">
                           <StyledTabsTrigger
                             value="sneakers"
-                            className="relative "
+                            className="relative text-color_1"
                           >
                             Top Sellers
                           </StyledTabsTrigger>
-                          <StyledTabsTrigger value="new_arrivals">
+                          <StyledTabsTrigger
+                            value="new_arrivals"
+                            className="relative text-color_1"
+                          >
                             New Arrival
                           </StyledTabsTrigger>
                         </StyledTabsList>
