@@ -107,7 +107,7 @@ const WomensId = ({ params }) => {
           >
             <p>order qty placeholder</p>
           </div> */}
-          <div className="py-4 w-1/5  text-black " id="target">
+          <div className="py-4 w-full md:w-1/4 md:flex text-black " id="target">
             <FlyingButton
               targetTop={'5%'}
               targetLeft={'95%'}
