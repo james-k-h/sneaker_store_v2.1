@@ -47,7 +47,8 @@ const SidebarOptions = ({ title }) => {
               <rect width="7" height="7" x="14" y="14" rx="1" />
               <rect width="7" height="7" x="3" y="14" rx="1" />
             </svg>
-            <Link href={`/${title}?limit=2`}>Collection</Link>
+            <p>Collection</p>
+            {/* <Link href={`/${title}?limit=2`}>Collection</Link> */}
           </StyledButton>
         </Link>
       </div>
