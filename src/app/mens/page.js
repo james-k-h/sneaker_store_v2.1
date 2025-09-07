@@ -22,6 +22,7 @@ const Mens = ({ params }) => {
   const [pageLength, setPageLength] = useState(null);
   const [ifClicked, setIfClicked] = useState(false);
   const [limit, setLimit] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
 
   const searchProps = useSearchParams();
   const searchParams = useSearchParams();
@@ -49,6 +50,7 @@ const Mens = ({ params }) => {
         .then(setFilterBrand(searchProps.get('brand')))
         .then(setLimit(searchParams.get('limit')));
     });
+    setIsLoading(true);
   }, [searchProps, filterBrand]);
 
   function testingButton() {
@@ -79,7 +81,7 @@ const Mens = ({ params }) => {
   return (
     <>
       <div className="md:block">
-        {/* <Suspense> */}
+        {/* <Suspense fallback=> */}
         {/* <Menu /> */}
         <div className="border-t">
           <div className="bg-background mt-16">
@@ -114,7 +116,6 @@ const Mens = ({ params }) => {
                       <StyledSeparator className="my-4" />
 
                       {/* bottom section mapping*/}
-
                       <div className="relative">
                         <ScrollArea>
                           {/* both blank */}

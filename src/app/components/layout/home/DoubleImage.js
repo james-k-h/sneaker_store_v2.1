@@ -1,8 +1,21 @@
-import { HomeFeaturedItems } from './HomeFeaturedItems';
-
+'use client';
+import { useEffect, useState } from 'react';
 import LayoutThree from './LayoutThree';
+import Loading from '../../Loading';
 
 const DoubleImage = () => {
+  const [homeFeaturedItems, setHomeFeaturedItems] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
+
+  useEffect(() => {
+    fetch('/api/home-featured').then((res) => {
+      res
+        .json()
+        .then((homeFeaturedItems) => setHomeFeaturedItems(homeFeaturedItems));
+    });
+    setIsLoading(true);
+  }, []);
+
   return (
     <section
       className="w-full mt-16 sm:mt-24  md:mt-32 px-5 
@@ -14,10 +27,13 @@ const DoubleImage = () => {
         gap-8     mb-6"
       >
         <article className=" col-span-2  sxl:col-span-1 row-span-2 relative ">
-          <LayoutThree item={HomeFeaturedItems[3]} />
-        </article>
-        <article className=" col-span-2  sxl:col-span-1 row-span-2 relative ">
-          <LayoutThree item={HomeFeaturedItems[4]} />
+          {isLoading === false ? (
+            <Loading />
+          ) : (
+            homeFeaturedItems
+              .filter((item) => item.filter === 'double')
+              .map((image) => <LayoutThree item={image} key={image._id} />)
+          )}
         </article>
       </div>
     </section>

@@ -84,40 +84,6 @@ const Hero = () => {
             </Link>
           </div>
         </motion.div>
-
-        {/* <motion.div
-          initial={{ opacity: 0, scale: 0.5 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.5 }}
-          className="col-span-4 place-self-center mt-4 lg:mt-0"
-        >
-
-          <h1 className="text-4xl font-semibold text-color_1">
-            Everything <br />
-            is better
-            <br /> with a&nbsp;
-            <span className="text-color_2"> good meal</span>
-          </h1>
-          <p className="my-6 text-color_1 text-sm">From our family to yours</p>
-          <div className="flex gap-4 text-sm justify-end">
-            <Link
-              href="/menu"
-              className="flex justify-center bg-color_2  items-center gap-2 text-color_1 px-4 py-2 rounded-full"
-            >
-              Order now
-              <Right />
-            </Link>
-          </div>
-          <div className="flex gap-4 text-sm justify-end mt-2">
-            <Link
-              href="/#about"
-              className="flex justify-center bg-color_4  items-center gap-2 text-color_2 px-4 py-2 rounded-full"
-            >
-              Learn more
-              <Right />
-            </Link>
-          </div>
-        </motion.div> */}
       </div>
     </section>
   );
