@@ -26,16 +26,6 @@ const DoubleImage = () => {
         className="grid grid-cols-2 grid-rows-2   mt-10 sm:mt-16
         gap-8     mb-6"
       >
-        {/* <article className=" col-span-2  sxl:col-span-1 row-span-2 relative ">
-          {isLoading === false ? (
-            <Loading />
-          ) : (
-            homeFeaturedItems
-              .filter((item) => item.filter === 'double')
-              .map((image) => <LayoutThree item={image} key={image._id} />)
-          )}
-        </article> */}
-
         {isLoading === false ? (
           <Loading />
         ) : (
