@@ -60,12 +60,6 @@ const FeaturedSneakers = () => {
               </article>
             ))
         )}
-        {/* <article className=" col-span-2 sm:col-span-1 row-span-1 relative">
-          <LayoutTwo item={HomeFeaturedItems[1]} />
-        </article>
-        <article className="col-span-2 sm:col-span-1 row-span-1 relative">
-          <LayoutTwo item={HomeFeaturedItems[2]} />
-        </article> */}
       </div>
     </section>
   );

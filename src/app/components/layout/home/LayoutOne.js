@@ -23,7 +23,7 @@ const LayoutOne = ({ item }) => {
 
       <div className="w-full absolute bottom-0 p-4 xs:p-6 sm:p-10 z-20">
         <Link
-          href={`/mens`}
+          href={`/sneakers`}
           className="px-6 text-xs 
           text-color_4
           bg-white
